@@ -26,7 +26,7 @@ const Home = () => {
         }
         const data = await response.json();
         setTodos(data);
-      } catch (e: any) {
+      } catch (e) {
         console.error("Faild to fetch todos: ", e);
         setError("Failed to load tasks. Please try refreshing.");
       } finally {

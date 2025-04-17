@@ -1,13 +1,15 @@
 import { deletedTodo, toggleTodo } from "@/app/lib/data";
 import { NextRequest, NextResponse } from "next/server";
 
-interface RouteParams {
-  params: { id: string };
-}
+// interface RouteParams {
+//   params: { id: string };
+// }
 
 // PATCH handler for /api/todos/[id]
-export async function PATCH(request: NextRequest, { params }: RouteParams) {
-  const id = parseInt(params.id, 10);
+export async function PATCH(request: NextRequest) {
+  const url = new URL(request.url);
+  const idStr = url.pathname.split("/").pop();
+  const id = parseInt(idStr || "", 10);
   if (isNaN(id)) {
     return NextResponse.json(
       {
@@ -49,8 +51,10 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
 }
 
 // DELETE handler for /api/todos/[id]
-export async function DELETE(request: NextRequest, { params }: RouteParams) {
-  const id = parseInt(params.id, 10);
+export async function DELETE(request: NextRequest) {
+  const url = new URL(request.url);
+  const idStr = url.pathname.split("/").pop();
+  const id = parseInt(idStr || "", 10);
   if (isNaN(id)) {
     return NextResponse.json(
       {

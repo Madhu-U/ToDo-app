@@ -2,7 +2,7 @@ import { addTodo, getAllTodos } from "@/app/lib/data";
 import { NextRequest, NextResponse } from "next/server";
 
 // GET handler for /api/todos
-export async function GET(request: NextRequest) {
+export async function GET() {
   const todos = getAllTodos();
   return NextResponse.json(todos);
 }
