@@ -4,7 +4,7 @@ A simple Todo application built with Next.js and TypeScript that demonstrates AP
 
 ![Screenshot of the Site](screenshot.png)
 
-Live Site : [Clicke here](https://madhu-to-do-app.vercel.app/)
+Live Site : [Click here](https://madhu-to-do-app.vercel.app/)
 
 ## Features
 
